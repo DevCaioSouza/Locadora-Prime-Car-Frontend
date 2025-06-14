@@ -1,9 +1,12 @@
 <h3>Lista de carros da empresa: </h3>
 <ul>
   @for (item of carsList; track item) {
-  Id: {{ item.id }}<br>
-  Modelo: {{ item.model }}<br>
-  Cor: {{ item.color }}<br>
-  Placa: {{ item.licensePlate }}<br>
+
+  <li>
+    Id: {{ item.id }}<br>
+    Modelo: {{ item.model }}<br>
+    Cor: {{ item.color }}<br>
+    Placa: {{ item.licensePlate }}<br>
+  </li>
   }
 </ul>
