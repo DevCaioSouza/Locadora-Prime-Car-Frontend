@@ -1,3 +1,13 @@
 <h3>Homepage</h3>
 
-<app-cars-list [carsList]="data$"></app-cars-list>
+<div>
+
+  <button class="btn" (click)="loadList()">
+    Exibir lista de carros
+  </button>
+
+</div>
+
+<div *ngIf="showList">
+  <app-cars-list [carsList]="data$"></app-cars-list>
+</div>
