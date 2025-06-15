@@ -9,6 +9,8 @@ export class Data {
 
   private http = inject(HttpClient)
 
+  //precisamos alterar a url para baseurl
+  //e concatenar usando + com os respectivos endpoints
   private apiUrl = 'https://sistema-backend-aluguel-carros.onrender.com/carros'
 
   getCarsList(): Observable<any> {
