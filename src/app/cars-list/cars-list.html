@@ -4,7 +4,7 @@
   <p>Loading...</p>
 </ngx-spinner>
 
-<ul>
+<!-- <ul>
   @for (item of carsList; track item) {
 
   <li>
@@ -14,4 +14,19 @@
     Placa: {{ item.licensePlate }}<br>
   </li>
   }
-</ul>
+</ul> -->
+
+<div class="carslist-container">
+
+  @for (item of carsList; track item) {
+  <div class="car-card">
+    <p>Id: {{ item.id }}</p>
+    <p>Modelo: {{ item.model }}</p>
+    <p>Cor: {{ item.color }}</p>
+    <p>Placa: {{ item.licensePlate }}</p>
+  </div>
+  }
+
+
+
+</div>

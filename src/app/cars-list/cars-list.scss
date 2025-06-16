@@ -1,0 +1,16 @@
+.carslist-container {
+  margin: 0 auto;
+  display: flex;
+  max-width: 90%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.car-card {
+  width: 25%;
+  border: 1px dotted blue;
+  border-radius: 5px;
+  margin: 0.8em 2.2em;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+}
