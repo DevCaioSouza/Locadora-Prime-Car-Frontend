@@ -13,4 +13,9 @@
   margin: 0.8em 2.2em;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+
+  @media (max-width: 480px) {
+  font-size: 0.6em;
+  margin: 2em 1.2em;
+}
 }
