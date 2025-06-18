@@ -6,8 +6,20 @@
     Exibir lista de carros
   </button>
 
-</div>
+</div> <br>
 
 <div *ngIf="showList">
   <app-cars-list [carsList]="data$"></app-cars-list>
+</div>
+
+<div>
+
+  <button class="btn" (click)="loadRecords()">
+    Exibir lista de carros alugados
+  </button>
+
+</div>
+
+<div *ngIf="showRecords">
+  <app-records-list [recordsList]="recordsData$"></app-records-list>
 </div>

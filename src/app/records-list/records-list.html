@@ -1,0 +1,17 @@
+<h3>Lista de carros alugados (Placa apenas)</h3>
+
+<ngx-spinner type="ball-atom">
+  <p>Loading...</p>
+</ngx-spinner>
+
+<div class="carslist-container">
+
+  @for (item of recordsList; track item) {
+  <div class="car-card">
+    <p>Placa: {{ item.plate }}</p>
+  </div>
+  }
+
+
+
+</div>
