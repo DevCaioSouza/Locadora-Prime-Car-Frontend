@@ -11,9 +11,13 @@ export class Data {
 
   //precisamos alterar a url para baseurl
   //e concatenar usando + com os respectivos endpoints
-  private apiUrl = 'https://sistema-backend-aluguel-carros.onrender.com/carros'
+  private apiUrl = 'https://sistema-backend-aluguel-carros.onrender.com/'
 
   getCarsList(): Observable<any> {
-    return this.http.get<any>(this.apiUrl)
+    return this.http.get<any>(this.apiUrl + 'carros')
+  }
+
+  getRecordData(): Observable<any> {
+    return this.http.get<any>(this.apiUrl + 'carros/alugados')
   }
 }
