@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 @Component({
   selector: 'app-cars-list',
   standalone: true,
-  imports: [NgxSpinnerModule],
+  imports: [NgxSpinnerModule, CommonModule],
   templateUrl: './cars-list.html',
   styleUrl: './cars-list.scss'
 })
@@ -14,8 +15,6 @@ export class CarsList {
   @Input() recordsList: any
 
   recordPlatesArr: any[] = []
-
-  statusClass:string = ''
 
   checkAvailable() {
 
@@ -30,12 +29,11 @@ export class CarsList {
 
       if(this.recordPlatesArr.includes(carlistPlate)){
         this.carsList[index].status = 'Alugado'
-
       } else {
         this.carsList[index].status = 'Disponível'
-
       }
     }
+
     console.log(this.recordPlatesArr)
 
   }
