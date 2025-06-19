@@ -3,11 +3,14 @@ import { Data } from '../services/data';
 import { CarsList } from "../cars-list/cars-list";
 import { CommonModule } from '@angular/common';
 import { RecordsList } from "../records-list/records-list";
+import { Navbar } from "../navbar/navbar";
+import { RouterOutlet } from '@angular/router';
+import { CreateCarForm } from "../create-car-form/create-car-form";
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [CommonModule, CarsList, RecordsList],
+  imports: [CommonModule, CarsList, RecordsList, Navbar, CreateCarForm],
   templateUrl: './homepage.html',
   styleUrl: './homepage.scss'
 })

@@ -1,0 +1,48 @@
+
+
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="form">
+
+  <h4>Adicionar novo veículo</h4>
+
+  <div class="form-field">
+    <label for="model">Modelo: </label>
+    <input type="text" id="model" formControlName="model" placeholder="Ex: Celta, Saveiro, etc">
+  </div>
+
+  <div class="form-field">
+    <label for="color">Cor: </label>
+    <input type="text" id="color" formControlName="color">
+  </div>
+
+  <div class="form-field">
+    <label for="licensePlate">Placa: </label>
+    <input type="text" id="licensePlate" formControlName="licensePlate" placeholder="3 Letras e 3 números">
+    <div
+      *ngIf="registrationForm.get('licensePlate')?.invalid && (registrationForm.get('licensePlate')?.dirty || registrationForm.get('licensePlate')?.touched)">
+      <small *ngIf="registrationForm.get('licensePlate')?.errors?.['required']">Placa precisa ter em sequência: 3 letras
+        e 3 números</small>
+    </div>
+  </div>
+
+  <div class="form-field">
+    <label for="rentPrice">Valor do aluguel: </label>
+    <input type="text" id="rentPrice" formControlName="rentPrice">
+  </div>
+
+  <div class="form-field">
+    <label for="category">Categoria (Selecione): </label>
+    <select name="category" id="category" formControlName="category">
+      <option value="pickup">Pickup</option>
+      <option value="hatch">Hatch</option>
+      <option value="sedan">Sedan</option>
+      <option value="light-pickup">Pickup Leve</option>
+      <option value="suv">SUV</option>
+      <option value="sport">Esportivo</option>
+      <option value="classic">Clássico</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn">Criar</button>
+
+
+</form>
