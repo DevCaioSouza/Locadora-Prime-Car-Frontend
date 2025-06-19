@@ -1,3 +1,5 @@
+<button (click)="checkAvailable()">CHECAR DISPONIBILIDADE</button>
+
 <h3>Lista de carros da empresa: </h3>
 
 <ngx-spinner type="ball-atom">
@@ -12,6 +14,7 @@
     <p>Modelo: {{ item.model }}</p>
     <p>Cor: {{ item.color }}</p>
     <p>Placa: {{ item.licensePlate }}</p>
+    <p>Disponibilidade: <span [ngClass]="item.status == 'Disponível' ? 'green' : 'red'">{{ item.status }}</span> </p>
   </div>
   }
 

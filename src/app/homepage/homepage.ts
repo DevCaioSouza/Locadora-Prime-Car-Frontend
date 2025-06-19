@@ -31,11 +31,12 @@ export class Homepage implements OnInit{
   ngOnInit(): void {
       this.dataService.getCarsList().subscribe(res => {
         this.data$ = res
+        console.table('Disponíveis: ', res)
       })
 
       this.dataService.getRecordData().subscribe(res => {
         this.recordsData$ = res
-        console.log('Click', res)
+        console.table('Alugados: ', res)
       })
   }
 
