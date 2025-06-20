@@ -12,8 +12,8 @@
 
 </div> <br>
 
-<div *ngIf="showList">
-  <app-cars-list [carsList]="data$" [recordsList]="recordsData$"></app-cars-list>
+<div>
+  <app-cars-list *ngIf="showList" [carsList]="data$" [recordsList]="recordsData$"></app-cars-list>
 </div>
 
 <div>

@@ -19,7 +19,7 @@ export class Homepage implements OnInit{
   showRecords: boolean = false
 
   loadList(){
-    this.showList = !this.showList
+      this.showList = !this.showList
   }
 
   loadRecords(){
