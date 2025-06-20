@@ -1,4 +1,4 @@
-<button (click)="checkAvailable()">CHECAR DISPONIBILIDADE</button>
+<button (click)="checkAvailable()">CHECAR DISPONIBILIDADE</button> <br><br>
 
 <h3>Lista de carros da empresa: </h3>
 
@@ -14,7 +14,7 @@
     <p>Modelo: {{ item.model }}</p>
     <p>Cor: {{ item.color }}</p>
     <p>Placa: {{ item.licensePlate }}</p>
-    <p>Disponibilidade: <span [ngClass]="item.status == 'Disponível' ? 'green' : 'red'">{{ item.status }}</span> </p>
+    <p><span [ngClass]="item.status == 'Disponível' ? 'green' : 'red'">{{ item.status }}</span> </p>
   </div>
   }
 

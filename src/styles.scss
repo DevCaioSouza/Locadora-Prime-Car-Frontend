@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.confirm-snackbar {
+  color: black;
+  background-color: rgb(17, 207, 14);
+  display: flex;
+}
+
+.denied-snackbar {
+  background-color: rgb(255, 0, 0);
+  color: #fff;
+}
