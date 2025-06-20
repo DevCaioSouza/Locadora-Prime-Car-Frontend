@@ -2,17 +2,19 @@ import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Data } from '../services/data';
+import { MatSnackBar, MatSnackBarConfig, MatSnackBarModule } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-create-car-form',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, MatSnackBarModule],
   templateUrl: './create-car-form.html',
   styleUrl: './create-car-form.scss'
 })
 export class CreateCarForm {
-  // @Output() addCarOrder = new EventEmitter<any>()
 
   private dataService = inject(Data)
+
+  private snackBar = inject(MatSnackBar)
 
   registrationForm: FormGroup
 
@@ -32,11 +34,22 @@ export class CreateCarForm {
         next: res => console.log(res),
         error: err => console.log(err)
       })
+      this.snackBar.open('Carro adicionado com sucesso! Atualize a página para ver as mudanças', 'X', this.snackConfirm)
+    } else {
+      this.snackBar.open('Formulário contém erro', 'X', this.snackDenied)
     }
   }
 
-  // emitAddCarOrder(carItem: any) {
-  //   this.addCarOrder.emit(carItem)
-  // }
+  private snackConfirm: MatSnackBarConfig = {
+    duration: 8000,
+    verticalPosition: 'top',
+    panelClass: ['confirm-snackbar']
+  }
+
+  private snackDenied: MatSnackBarConfig = {
+    duration: 8000,
+    verticalPosition: 'top',
+    panelClass: ['denied-snackbar']
+  }
 
 }
