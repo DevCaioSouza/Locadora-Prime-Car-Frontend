@@ -19,8 +19,7 @@
     <input type="text" id="licensePlate" formControlName="licensePlate" placeholder="3 Letras e 3 números">
     <div
       *ngIf="registrationForm.get('licensePlate')?.invalid && (registrationForm.get('licensePlate')?.dirty || registrationForm.get('licensePlate')?.touched)">
-      <small *ngIf="registrationForm.get('licensePlate')?.errors?.['required']">Placa precisa ter em sequência: 3 letras
-        e 3 números</small>
+      <small *ngIf="registrationForm.get('licensePlate')?.errors">Placa precisa ter em sequência: 3 letras e 3 números</small>
     </div>
   </div>
 
