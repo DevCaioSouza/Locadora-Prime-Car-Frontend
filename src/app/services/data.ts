@@ -17,6 +17,10 @@ export class Data {
     return this.http.get<any>(this.apiUrl + 'carros')
   }
 
+  addNewCar(formData: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl + 'carros', formData)
+  }
+
   getRecordData(): Observable<any> {
     return this.http.get<any>(this.apiUrl + 'carros/alugados')
   }

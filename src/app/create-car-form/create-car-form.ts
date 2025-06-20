@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Data } from '../services/data';
 
 @Component({
   selector: 'app-create-car-form',
@@ -9,7 +10,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './create-car-form.scss'
 })
 export class CreateCarForm {
-  @Output() addCarOrder = new EventEmitter<any>()
+  // @Output() addCarOrder = new EventEmitter<any>()
+
+  private dataService = inject(Data)
 
   registrationForm: FormGroup
 
@@ -23,14 +26,17 @@ export class CreateCarForm {
     })
   }
 
-  emitAddCarOrder(carItem: any) {
-    this.addCarOrder.emit(carItem)
-  }
-
   onSubmit() {
     if (this.registrationForm.valid) {
-      this.emitAddCarOrder(this.registrationForm.value)
+      this.dataService.addNewCar(this.registrationForm.value).subscribe({
+        next: res => console.log(res),
+        error: err => console.log(err)
+      })
     }
   }
+
+  // emitAddCarOrder(carItem: any) {
+  //   this.addCarOrder.emit(carItem)
+  // }
 
 }
